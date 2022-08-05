@@ -5,7 +5,9 @@ require 'models/Auth.php';
 
 
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$senha = filter_input(INPUT_POST, 'password');
+$senha = filter_input(INPUT_POST, 'senha');
+
+echo $email. '---'.$senha;
 
 if ($email && $senha) {
     $auth = new Auth($conn, $base);
@@ -14,5 +16,7 @@ if ($email && $senha) {
     }
 }
 
+
+$_SESSION['flash'] = 'E-mail e/ou senha inválidos. 2';
 header("location: " . $base . "/login.php");
 exit;

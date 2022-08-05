@@ -21,20 +21,21 @@ require 'config.php';
         </div>
     </header>
     <section class="container main">
-        <form method="POST" action="login_action.php">
+        <form method="POST" action="signup_action.php">
 
-            <?php if(!empty($_SESSION['flash'])):?>
-                <?=$_SESSION['flash']; ?>
-                <?=$_SESSION['flash'] = ''; ?>
-            <?php endif;?>
+            <?php if (!empty($_SESSION['flash'])) : ?>
+                <?= $_SESSION['flash']; ?>
+                <?= $_SESSION['flash'] = ''; ?>
+            <?php endif; ?>
+            <input placeholder="Nome" class="input" type="text" name="nome" />
 
             <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
 
             <input placeholder="Digite sua senha" class="input" type="password" name="senha" />
 
-            <input class="button" type="submit" value="Acessar" />
+            <input class="button" type="submit" value="Cadastrar" />
 
-            <a href="<?=$base;?>/signup.php">Ainda não tem conta? Cadastre-se</a>
+            <a href="<?= $base; ?>/login.php">Já tem conta? Faça o Login</a>
         </form>
     </section>
 </body>
