@@ -2071,3 +2071,90 @@ Stack trace:
 2022/08/05 12:35:23 [error] 31#31: *743 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "localhost"
 2022/08/05 12:35:23 [error] 31#31: *747 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET //assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "localhost", referrer: "http://localhost/login.php"
 2022/08/05 12:35:23 [error] 31#31: *743 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET //assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "localhost", referrer: "http://localhost//assets/css/login.css"
+2022/08/05 12:59:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/08/05 12:59:10 [notice] 31#31: gracefully shutting down
+2022/08/05 12:59:10 [notice] 32#32: gracefully shutting down
+2022/08/05 12:59:10 [notice] 33#33: gracefully shutting down
+2022/08/05 12:59:10 [notice] 31#31: exiting
+2022/08/05 12:59:10 [notice] 35#35: gracefully shutting down
+2022/08/05 12:59:10 [notice] 34#34: gracefully shutting down
+2022/08/05 12:59:10 [notice] 36#36: gracefully shutting down
+2022/08/05 12:59:10 [notice] 32#32: exiting
+2022/08/05 12:59:10 [notice] 33#33: exiting
+2022/08/05 12:59:10 [notice] 35#35: exiting
+2022/08/05 12:59:10 [notice] 34#34: exiting
+2022/08/05 12:59:10 [notice] 36#36: exiting
+2022/08/05 12:59:10 [notice] 38#38: gracefully shutting down
+2022/08/05 12:59:10 [notice] 38#38: exiting
+2022/08/05 12:59:10 [notice] 31#31: exit
+2022/08/05 12:59:10 [notice] 33#33: exit
+2022/08/05 12:59:10 [notice] 32#32: exit
+2022/08/05 12:59:10 [notice] 34#34: exit
+2022/08/05 12:59:10 [notice] 35#35: exit
+2022/08/05 12:59:10 [notice] 36#36: exit
+2022/08/05 12:59:10 [notice] 38#38: exit
+2022/08/05 12:59:10 [notice] 37#37: gracefully shutting down
+2022/08/05 12:59:10 [notice] 37#37: exiting
+2022/08/05 12:59:10 [notice] 37#37: exit
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2022/08/05 12:59:10 [notice] 1#1: worker process 35 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: worker process 36 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: signal 29 (SIGIO) received
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2022/08/05 12:59:10 [notice] 1#1: worker process 37 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: worker process 38 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: signal 29 (SIGIO) received
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2022/08/05 12:59:10 [notice] 1#1: worker process 33 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: signal 29 (SIGIO) received
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2022/08/05 12:59:10 [notice] 1#1: worker process 34 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: signal 29 (SIGIO) received
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2022/08/05 12:59:10 [notice] 1#1: worker process 31 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: signal 29 (SIGIO) received
+2022/08/05 12:59:10 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2022/08/05 12:59:10 [notice] 1#1: worker process 32 exited with code 0
+2022/08/05 12:59:10 [notice] 1#1: exit
+2022/08/08 08:07:00 [notice] 1#1: using the "epoll" event method
+2022/08/08 08:07:00 [notice] 1#1: nginx/1.20.0
+2022/08/08 08:07:00 [notice] 1#1: built by gcc 10.2.1 20201203 (Alpine 10.2.1_pre1) 
+2022/08/08 08:07:00 [notice] 1#1: OS: Linux 5.15.0-43-generic
+2022/08/08 08:07:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/08/08 08:07:00 [notice] 1#1: start worker processes
+2022/08/08 08:07:00 [notice] 1#1: start worker process 31
+2022/08/08 08:07:00 [notice] 1#1: start worker process 32
+2022/08/08 08:07:00 [notice] 1#1: start worker process 33
+2022/08/08 08:07:00 [notice] 1#1: start worker process 34
+2022/08/08 08:07:00 [notice] 1#1: start worker process 35
+2022/08/08 08:07:00 [notice] 1#1: start worker process 36
+2022/08/08 08:07:00 [notice] 1#1: start worker process 37
+2022/08/08 08:07:00 [notice] 1#1: start worker process 38
+2022/08/08 08:08:41 [error] 31#31: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost"
+2022/08/08 08:08:41 [error] 31#31: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 08:08:41 [error] 31#31: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 08:08:42 [error] 31#31: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 27" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:12:50 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/"
+2022/08/08 10:12:50 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:12:50 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:12:57 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:12:58 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:13:03 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/"
+2022/08/08 10:13:03 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:13:03 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:13:05 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/index.php"
+2022/08/08 10:13:05 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:13:05 [error] 31#31: *258 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:13:11 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:13:11 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/signup.php"
+2022/08/08 10:13:12 [error] 31#31: *283 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:13:25 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost"
+2022/08/08 10:13:25 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:13:25 [error] 31#31: *283 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:13:33 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/signup.php"
+2022/08/08 10:13:33 [error] 31#31: *283 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:13:40 [error] 31#31: *265 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"
+2022/08/08 10:13:40 [error] 31#31: *283 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:23:36 [error] 31#31: *305 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/css/defaults.css HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/assets/css/login.css"
+2022/08/08 10:23:36 [error] 31#31: *307 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined property: Auth::$base in /var/www/html/public/models/Auth.php on line 28" while reading response header from upstream, client: 172.18.0.1, server: representante.karina.test, request: "GET /assets/images/devsbook_logo.png HTTP/1.1", upstream: "fastcgi://172.18.0.5:9000", host: "localhost", referrer: "http://localhost/login.php"

@@ -5,20 +5,21 @@ require_once 'dao/UserDaoSQL.php';
 class Auth
 {
     private $conn;
+    private $dao;
 
 
     public function __construct(PDO $conn)
     {
         $this->conn = $conn;
+        $this->dao = new UserDaoSQL($this->conn);
     }
 
     public function checkToken()
     {
         if (!empty($_SESSION['token'])) {
             $token = $_SESSION['token'];
-
-            $userDao = new UserDaoSQL($this->conn);
-            $user = $userDao->findByToken($token);
+            
+            $user = $this->dao->findByToken($token);
             if ($user) {
                 return $user;
             }
@@ -30,13 +31,13 @@ class Auth
 
     public function validateLogin($email, $senha)
     {
-        $userDao = new UserDaoSQL($this->conn);
-        $user = $userDao->findByEmail($email);
+        
+        $user = $this->dao->findByEmail($email);
         if ($user) {
             if (password_verify($senha, $user->senha)) {
                 $token = md5(time() . rand(0, 9999));
                 $_SESSION['token'] = $token;
-                $userDao->update($user);
+                $this->dao->update($user);
 
                 return true;
             }
@@ -46,16 +47,13 @@ class Auth
     }
 
     public function emailExists($email)
-    {
-        
-        $userDao = new UserDaoSQL($this->conn);
-        
-        return $userDao->findByEmail($email) ? true : false;
+    {        
+               
+        return $this->dao->findByEmail($email) ? true : false;
         
     }
 
-    public function registerUser($nome, $email, $senha){
-        $userDao = new UserDaoSQL($this->conn);
+    public function registerUser($nome, $email, $senha){       
         
 
         $hash = password_hash($senha, PASSWORD_DEFAULT);
@@ -67,7 +65,7 @@ class Auth
         $newUser->senha = $hash;
         $newUser->token = $token;
 
-        $userDao->insert($newUser);
+        $this->dao->insert($newUser);
 
         $_SESSION['token'] = $token;
     }
