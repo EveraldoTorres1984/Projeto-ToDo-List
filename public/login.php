@@ -21,7 +21,7 @@ require 'config.php';
         </div>
     </header>
     <section class="container main">
-        <form method="POST" action="login_action.php">
+        <form method="POST" action="<?=$base?>/login_action.php">
 
             <?php if(!empty($_SESSION['flash'])):?>
                 <?=$_SESSION['flash']; ?>

@@ -1,5 +1,9 @@
-<html>
+<?php 
+   $firstName = current(explode(' ', $userInfo->nome));
+?>
 
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8" />
     <title></title>
@@ -20,7 +24,7 @@
                     </div>
                 </div>
                 <div class="head-center">
-                    <h2>Seja bem-vindo, Everaldo!</h2>
+                    <h2>Seja bem-vindo, <?=$firstName;?></h2>
                 </div>
                 <div class="head-side-right">
                     <div class="texto-logout">

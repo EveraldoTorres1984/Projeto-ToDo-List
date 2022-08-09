@@ -1,6 +1,6 @@
 <?php
 
-require_once 'models/Table.php';
+require_once '../models/Table.php';
 
 class tableDaoSQL implements tableDAO
 {
@@ -14,26 +14,22 @@ class tableDaoSQL implements tableDAO
 
     public function update(Table $t)
     {
-        $sql = $this->conn->prepare("UPDATE tbl_tasks SET email =:email,
-        senha = :senha, nome = :nome, token = :token WHERE id =:id");
+        $sql = $this->conn->prepare("UPDATE tbl_tasks SET date_task = :date_task,desc_task = :desc_task WHERE id_task =:id");
 
-        $sql->bindValue(':email', $u->email);
-        $sql->bindValue(':senha', $u->senha);
-        $sql->bindValue(':nome', $u->nome);
-        $sql->bindValue(':token', $u->token);
-        $sql->bindValue(':id', $u->id);
+        $sql->bindValue(':date_task', $t->dataCriacao);
+        $sql->bindValue(':desc_task', $t->tarefa);       
+        $sql->bindValue(':id', $t->id);
         $sql->execute();
 
         return true;
     }
 
-    public function insert(User $u)
+    public function insert(Table $t)
     {
-        $sql = $this->conn->prepare("INSERT INTO tasks_users(nome, email, senha,token) VALUES (:nome, :email, :senha,:token)");
-        $sql->bindValue(':nome', $u->nome);
-        $sql->bindValue(':email', $u->email);
-        $sql->bindValue(':senha', $u->senha);
-        $sql->bindValue(':token', $u->token);
+        $sql = $this->conn->prepare("INSERT INTO tbl_tasks(desc_task, date_task, id_user) VALUES (desc_task, date_task, id_user)");
+        $sql->bindValue(':desc_task', $t->tarefa);
+        $sql->bindValue(':date_task', $t->email);
+        $sql->bindValue(':id_user', $t->idUser);        
         $sql->execute();
     }
 }
