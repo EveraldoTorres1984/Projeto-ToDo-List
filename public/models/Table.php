@@ -1,14 +1,15 @@
 <?php
 
-class Table {
-
-    public $id;
-    public $tarefa;
-    public $dataCriacao;
-    public $idUser;
+class Table
+{
+    public $id_task;
+    public $desc_task;
+    public $date_task;
+    public $id_user;
 }
 
-interface tableDAO{
+interface TableDAO
+{
+    
     public function insert(Table $t);
-    public function update(Table $t);
 }

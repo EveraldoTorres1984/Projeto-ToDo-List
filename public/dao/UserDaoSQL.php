@@ -71,7 +71,6 @@ class UserDaoSQL implements UserDAO
 
     public function update(User $u)
     {
-        var_dump($u);
         $sql = $this->conn->prepare("UPDATE tasks_users SET email =:email,
         senha = :senha, nome = :nome, token = :token WHERE id =:id");
 

@@ -1,16 +1,24 @@
-<?php
+<?php 
 
-/* require './dao/tableDaoSQL.php'; */
-require './config.php';
-require './models/Table.php';
+require 'config.php';
+require 'models/Auth.php';
+require 'dao/TableDaoSQL.php';
 
+$auth = new Auth($conn, $base);
+$userInfo = $auth->checkToken();
 
+$tarefa =  filter_input(INPUT_POST, 'tarefa');
 
-var_dump('cxd');
+if ($tarefa) {
+    $tarefaDao = new TableDaoSQL($conn);
+
+    $newTarefa = new Table();
+    $newTarefa->id_user = $userInfo->id;
+    $newTarefa->date_task = date('Y-m-d');
+    $newTarefa->desc_task = $tarefa;
+
+    $tarefaDao->insert($newTarefa);
+}
+
+header("location: " . $base);
 exit;
-$tableDao = new tableDaoSQL($conn);
-$tableDao->tarefa = filter_input(INPUT_POST, 'tarefa');
-$tableDao->dataCriacao = date('d/m/Y');
-$tableDao->idUser = $auth->checkToken()->id;
-
-$tableDao->insert($table);

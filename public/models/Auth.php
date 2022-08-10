@@ -1,20 +1,19 @@
 <?php
 
-require_once 'dao/UserDaoSQL.php';
-require_once 'dao/tableDaoSQL.php';
 
+require_once 'dao/UserDaoSQL.php';
 class Auth
 {
     private $conn;
-    private $dao;
-    private $daoTable;
+    private $dao;   
+    private $base;
 
 
-    public function __construct(PDO $conn)
+    public function __construct(PDO $conn, $base)
     {
         $this->conn = $conn;
-        $this->dao = new UserDaoSQL($this->conn);
-        $this->daoTable = new tableDaoSQL($this->conn);    
+        $this->base = $base;
+        $this->dao = new UserDaoSQL($this->conn);            
     }
 
     public function checkToken()    {
@@ -27,7 +26,7 @@ class Auth
                 return $user;
             }
         }
-        header("location:" . $this->base . "login.php");
+        header("location:" . $this->base . "/login.php");
         exit;
     }
 

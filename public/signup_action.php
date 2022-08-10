@@ -1,11 +1,14 @@
 <?php
 
-require 'config.php';
-require 'models/Auth.php';
+require './config.php';
+
+require './models/Auth.php';
+
 
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $senha = filter_input(INPUT_POST, 'senha');
+
 
 if ($nome && $email && $senha) {
     $auth = new Auth($conn, $base);
@@ -19,6 +22,6 @@ if ($auth->emailExists($email) === false) {
     exit;
 } else {
     $_SESSION['flash'] = 'E-mail já Cadastrado';
-    header("location: " . $base . "login.php");
+    header("location: " . $base . "/login.php");
     exit;
 }

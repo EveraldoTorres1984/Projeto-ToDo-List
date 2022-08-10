@@ -1,0 +1,23 @@
+
+.container input:focus::placeholder {
+    color: transparent;
+}
+#center-thead{
+    width: 100%;
+    text-align: center;    
+}
+
+tr,th,td{
+    text-align: center; 
+    vertical-align: middle;        
+    
+}
+#btn-acao {
+    display: flex;
+    justify-content: center;    
+}
+
+#btn-acao button{
+   align-items: right;
+   margin-right: 15px;   
+}
