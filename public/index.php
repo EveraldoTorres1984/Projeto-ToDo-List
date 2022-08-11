@@ -1,13 +1,20 @@
 <?php
+
 require 'config.php';
 require 'models/Auth.php';
+require 'dao/TableDaoSQL.php';
 
 $firstName = current(explode(' ', $userInfo->nome));
 
 $auth = new Auth($conn, $base);
 $userInfo = $auth->checkToken();
+$taskDAO = new TableDaoSQL($conn);
+
+$tarefas = $taskDAO->getListInfo($userInfo->id);
 
 require 'partials/header.php';
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,18 +52,21 @@ require 'partials/header.php';
                         <th scope="col" class="table-primary fs-4">Ações</th>
                         </tr>
                     </thead>
+
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Dia/mÊs/ano</td>
-                            <td class="col-md-4">
-                                <div id="btn-acao">
-                                    <button class=" btn btn-warning">Editar</button>
-                                    <button class=" btn btn-danger">Apagar</button>
-                                </div>
-                            </td>
-                        </tr>
+                        <?php foreach ($tarefas as $tarefa) : ?>
+                            <tr>
+                                <td><?= $tarefa->id_task ?></td>
+                                <td><?= $tarefa->desc_task ?></td>
+                                <td><?= $tarefa->dataBasil ?></td>
+                                <td class="col-md-4">
+                                    <div id="btn-acao">
+                                        <button class=" btn btn-warning">Editar</button>
+                                        <button class=" btn btn-danger">Apagar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

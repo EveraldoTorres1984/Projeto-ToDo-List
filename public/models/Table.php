@@ -10,6 +10,8 @@ class Table
 
 interface TableDAO
 {
-    
+
     public function insert(Table $t);
+    public function getListInfo(Table $t);
+    public function delete(Table $t);
 }

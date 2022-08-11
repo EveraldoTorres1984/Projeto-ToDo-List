@@ -1,12 +1,14 @@
-<?php 
+<?php
 
 require_once 'models/Table.php';
 
-class TableDaoSQL implements TableDAO{
+class TableDaoSQL implements TableDAO
+{
     private $conn;
 
-    public function __construct(PDO $driver) {
-        $this->conn = $driver;        
+    public function __construct(PDO $driver)
+    {
+        $this->conn = $driver;
     }
     public function insert(Table $t)
     {
@@ -16,23 +18,37 @@ class TableDaoSQL implements TableDAO{
         $sql->bindValue(':date_task', $t->date_task);
         $sql->bindValue(':id_user', $t->id_user);
         $sql->execute();
-        
-    } 
-    public function getTable($id_user){
-        $array = [];
+    }
 
-        $sql = $this->conn->prepare("SELECT * FROM tbl_tasks WHERE id_user = :id_user");
+    public function getListInfo($id)
+    {
+        $listData = $this->conn->prepare("SELECT * FROM tbl_tasks WHERE id_user = :id_user");
+        $listData->bindParam(':id_user', $id);
+        $listData->execute();
 
-        if($qtde = $this->conn->prepare("SELECT COUNT(*) FROM tbl_tasks WHERE id_user = :id_user") > 0){
-            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-            $array = $this->_getTableToObject($data);
 
-            return $array;
-        }        
-        
-    }   
-    private function _getTableToObject($id_user){
-            
+        if($listData->rowCount() !== 0){
+            $data = $listData->fetchAll(PDO::FETCH_ASSOC);
+            foreach($data as $item){
+                
+                $t = new Table();
+                $t->id_task = $item['id_task'];
+                $t->desc_task= $item['desc_task'];
+                $t->date_task = $item['date_task'];
+                $t->dataBasil = date('d/m/Y');
+                $t->id_user = $item['id_user'];
+                $array[] = $t;
+            }
+        }
+        return $array;
+    }
+
+    public function delete(Table $t)
+    {
+        $sql = "DELETE FROM tbl_tasks WHERE id_task = :id_task";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id_task', $t->id_task);
+        $stmt->execute();
     }
 }

@@ -60,7 +60,7 @@ class UserDaoSQL implements UserDAO
 
             if ($qtde->fetchColumn() > 0) {
 
-                $data = $sql->fetch(PDO::FETCH_ASSOC);
+                $data = $sql->fetch(PDO::FETCH_ASSOC);                
                 $user = $this->generateUser($data);
                 return $user;
             }
