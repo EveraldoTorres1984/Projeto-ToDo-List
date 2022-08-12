@@ -12,6 +12,7 @@ $taskDAO = new TableDaoSQL($conn);
 
 $tarefas = $taskDAO->getListInfo($userInfo->id);
 
+
 require 'partials/header.php';
 
 
@@ -56,13 +57,13 @@ require 'partials/header.php';
                     <tbody>
                         <?php foreach ($tarefas as $tarefa) : ?>
                             <tr>
-                                <td><?= $tarefa->id_task ?></td>
-                                <td><?= $tarefa->desc_task ?></td>
-                                <td><?= $tarefa->dataBasil ?></td>
+                                <td><?= $tarefa->getIdTask(); ?></td>
+                                <td><?= $tarefa->getDescTask(); ?></td>
+                                <td><?= $tarefa->getDateTask(); ?></td>
                                 <td class="col-md-4">
                                     <div id="btn-acao">
                                         <button class=" btn btn-warning">Editar</button>
-                                        <button class=" btn btn-danger">Apagar</button>
+                                        <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
                                     </div>
                                 </td>
                             </tr>

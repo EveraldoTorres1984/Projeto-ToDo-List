@@ -12,12 +12,9 @@ tr,th,td{
     vertical-align: middle;        
     
 }
-#btn-acao {
+#btn-acao{
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    
 }
 
-#btn-acao button{
-   align-items: right;
-   margin-right: 15px;   
-}

@@ -7,14 +7,14 @@ require 'dao/TableDaoSQL.php';
 $auth = new Auth($conn, $base);
 $userInfo = $auth->checkToken();
 
-$tarefa =  ucwords(trim(filter_input(INPUT_POST, 'tarefa')));
+$tarefa =  ucfirst(trim(filter_input(INPUT_POST, 'tarefa')));
 
 if ($tarefa) {
     $tarefaDao = new TableDaoSQL($conn);
 
     $newTarefa = new Table();
     $newTarefa->id_user = $userInfo->id;
-    $newTarefa->date_task = date('Y-m-d');
+    $newTarefa->date_task = date('d-m-Y');
     $newTarefa->desc_task = $tarefa;
 
     $tarefaDao->insert($newTarefa);

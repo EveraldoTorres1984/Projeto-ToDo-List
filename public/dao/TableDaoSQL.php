@@ -28,15 +28,14 @@ class TableDaoSQL implements TableDAO
 
 
 
-        if($listData->rowCount() !== 0){
+        if ($listData->rowCount() !== 0) {
             $data = $listData->fetchAll(PDO::FETCH_ASSOC);
-            foreach($data as $item){
-                
+            foreach ($data as $item) {
+
                 $t = new Table();
                 $t->id_task = $item['id_task'];
-                $t->desc_task= $item['desc_task'];
+                $t->desc_task = $item['desc_task'];
                 $t->date_task = $item['date_task'];
-                $t->dataBasil = date('d/m/Y');
                 $t->id_user = $item['id_user'];
                 $array[] = $t;
             }
@@ -44,11 +43,12 @@ class TableDaoSQL implements TableDAO
         return $array;
     }
 
-    public function delete(Table $t)
-    {
-        $sql = "DELETE FROM tbl_tasks WHERE id_task = :id_task";
+    public function delete($id_task, $id_user)    {
+        
+        $sql = "DELETE FROM tbl_tasks WHERE id_task = :id_task AND id_user = :id_user ";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':id_task', $t->id_task);
+        $stmt->bindValue(':id_task', $id_task);
+        $stmt->bindValue(':id_user', $id_user);
         $stmt->execute();
     }
 }

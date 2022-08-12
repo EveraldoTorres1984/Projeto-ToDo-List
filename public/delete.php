@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require './config.php';
 require 'dao/TableDaoSQL.php';
@@ -6,8 +6,13 @@ require 'dao/TableDaoSQL.php';
 
 $task = new TableDaoSQL($conn);
 
-$id = filter_input(INPUT_GET, 'id_task');
+$idTask = filter_input(INPUT_GET, 'id_task');
+$idUser = filter_input(INPUT_GET, 'id_user');
 
-if($id){
-    $TableDaoSQL->delete($id);
+if ($idTask && $idUser) {
+    
+    $task->delete($idTask, $idUser);    
 }
+
+header("location: " . $base);
+exit;
