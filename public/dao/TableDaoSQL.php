@@ -12,6 +12,7 @@ class TableDaoSQL implements TableDAO
     }
     public function insert(Table $t)
     {
+
         $sql = $this->conn->prepare("INSERT INTO tbl_tasks (desc_task, date_task, id_user) VALUES (:desc_task, :date_task, :id_user)");
 
         $sql->bindValue(':desc_task', $t->desc_task);
@@ -43,12 +44,23 @@ class TableDaoSQL implements TableDAO
         return $array;
     }
 
-    public function delete($id_task, $id_user)    {
-        
+    public function delete($id_task, $id_user)
+    {
+
         $sql = "DELETE FROM tbl_tasks WHERE id_task = :id_task AND id_user = :id_user ";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(':id_task', $id_task);
         $stmt->bindValue(':id_user', $id_user);
         $stmt->execute();
+    }
+
+    public function update(Table $t)
+    {
+        $sql = $this->conn->prepare('UPDATE tbl_tasks SET desc_task = :desc_task WHERE id_task = :id_task');
+        $sql->bindValue(':id_task', $t->getIdTask());
+        $sql->bindValue(':desc_task', $t->getDescTask());
+        $sql->execute();
+        
+
     }
 }

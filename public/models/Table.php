@@ -8,7 +8,7 @@ class Table
     public $desc_task;
     public $date_task;
     public $id_user;
-    
+
 
     public function getIdTask()
     {
@@ -32,21 +32,20 @@ class Table
 
     public function getDateTask()
     {
-        $date = DateTime::createFromFormat('d/m/Y', $this->date_task);
-        var_dump($date);
-        exit;
-        return $date;
+        $dataBR = date('d/m/Y', strtotime($this->date_task));
+        return $dataBR;
     }
-    public function setDateTask($date_task)
+    public function setDateTask()
     {
-        $this->date_task = date('d/m/Y');
+        $this->date_task = date('Y-m-d');
     }
     public function getIdUser()
     {
         return $this->id_user;
     }
-    public function setIdUser($iu){
-        $this->id_user =trim($iu);
+    public function setIdUser($iu)
+    {
+        $this->id_user = trim($iu);
     }
 }
 
@@ -56,4 +55,5 @@ interface TableDAO
     public function insert(Table $t);
     public function getListInfo(Table $t);
     public function delete($id_task, $id_user);
+    public function update(Table $t);
 }

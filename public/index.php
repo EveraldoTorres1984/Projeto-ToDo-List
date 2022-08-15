@@ -62,7 +62,7 @@ require 'partials/header.php';
                                 <td><?= $tarefa->getDateTask(); ?></td>
                                 <td class="col-md-4">
                                     <div id="btn-acao">
-                                        <button class=" btn btn-warning">Editar</button>
+                                        <a href="editTask.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-warning">Editar</a> 
                                         <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
                                     </div>
                                 </td>

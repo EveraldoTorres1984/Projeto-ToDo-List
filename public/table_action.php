@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require 'config.php';
 require 'models/Auth.php';
@@ -14,9 +14,8 @@ if ($tarefa) {
 
     $newTarefa = new Table();
     $newTarefa->id_user = $userInfo->id;
-    $newTarefa->date_task = date('d-m-Y');
+    $newTarefa->date_task = date('Y-m-d');
     $newTarefa->desc_task = $tarefa;
-
     $tarefaDao->insert($newTarefa);
 }
 
