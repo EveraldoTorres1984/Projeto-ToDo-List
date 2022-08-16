@@ -4,7 +4,8 @@ require 'config.php';
 require 'dao/TableDaoSQL.php';
 
 
-$info = [];
+
+/* $info = []; */
 $id_task = filter_input(INPUT_GET, 'id_task');
 $id_user = filter_input(INPUT_GET, 'id_user');
 
@@ -26,9 +27,10 @@ if ($id_task && $id_user) {
     exit;
 }
 
-
 ?>
-<h1>Editar</h1>
+
+
+<!-- <h1>Editar</h1>
 
 <form action="editTask_action.php" method="POST">
     <input type="hidden" name="id_task" value ="<?= $info['id_task'] ?>">
@@ -38,4 +40,4 @@ if ($id_task && $id_user) {
     </label><br><br>
 
     <input type="submit" value="Salvar">
-</form>
+</form> -->

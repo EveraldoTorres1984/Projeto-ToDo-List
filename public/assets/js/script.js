@@ -1,13 +1,12 @@
 
+const myModal = document.getElementById('editModal')
+const btnTarefa = document.getElementById('inputTarefa')
 
-/* 
-let inputTarefa = document.querySelector('#inserirTarefa');
-let botaoSubmit = document.querySelector('.botaoSubmit');
-let feedTabela = document.querySelector('.novaTarefa');
+myModal.addEventListener('shown.bs.modal', (e) => {
+    let idTask = e.currentTarget.getAttribute('data-bs-id_task');
+    let deskTask = e.currentTarget.getAttribute('data-bs-desc_tarefa');
+    console.log(e);
+  btnTarefa.focus()
+})
 
-botaoSubmit.addEventListener('click', function(){
-    let value = inputTarefa.innerText.trim();
 
-    feedTabela.querySelector('input[name=tarefa]').value = value;
-    feedTabela.submit();
-}) */
