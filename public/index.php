@@ -12,10 +12,7 @@ $taskDAO = new TableDaoSQL($conn);
 
 $tarefas = $taskDAO->getListInfo($userInfo->id);
 
-$info = [];
-
 require 'partials/header.php';
-
 
 ?>
 <!DOCTYPE html>
@@ -57,16 +54,17 @@ require 'partials/header.php';
 
                     <tbody>
                         <?php foreach ($tarefas as $tarefa) : ?>
-                            
+
                             <tr>
                                 <td><?= $tarefa->getIdTask(); ?></td>
                                 <td><?= $tarefa->getDescTask(); ?></td>
                                 <td><?= $tarefa->getDateTask(); ?></td>
                                 <td class="col-md-4">
                                     <div id="btn-acao">
-  
-                                        <a id="inputTarefa" class="btn btn-warning" value="teste" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-id_task="<?= $tarefa->getIdTask(); ?>"
-                                        data-bs-desc_tarefa="<?= $tarefa->getDescTask(); ?>">Editar</a>
+
+                                        <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever-id="<?= $tarefa->getIdTask(); ?>" data-bs-whatever-desc="<?= $tarefa->getDescTask(); ?>">Editar</a>
+
+
                                         <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
                                     </div>
                                 </td>
@@ -79,26 +77,33 @@ require 'partials/header.php';
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Tarefa</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="editTask_action.php" method="POST">
-                        <input type="hidden" name="id_task" value="<?= $info['id_task']; ?>">
-                        <label>
-                            Tarefa: <br>
-                            <input type="text" id="modalInput" name="desc_task" value="<?= $info['desc_task'] ?>">
-                        </label><br><br>
+                    <form method="POST" action="<?= $base; ?>/editTask_action.php">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Editar Tarefa:</label>
+
+                            <input type="text" class="form-control" id="recipient-name" name="desc_task">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label"></label>
+
+                            <input type="hidden" class="form-control testeId" id="recipient-name" name="id_task">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </div>
-                </form>
             </div>
         </div>
     </div>
@@ -107,4 +112,3 @@ require 'partials/header.php';
     <?php
     require 'partials/footer.php'
     ?>
-    
