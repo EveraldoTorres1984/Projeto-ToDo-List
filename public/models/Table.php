@@ -22,7 +22,9 @@ class Table
 
     public function getDescTask()
     {
-        return $this->desc_task;
+        
+        $tarefa = trim(ucfirst($this->desc_task));
+        return $tarefa;
     }
 
     public function setDescTask($desc_task)

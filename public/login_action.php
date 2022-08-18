@@ -3,7 +3,7 @@
 require './config.php';
 require './models/Auth.php';
 
-$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL);
 $senha = filter_input(INPUT_POST, 'senha');
  
 if ($email && $senha) {

@@ -52,7 +52,7 @@ require 'partials/header.php';
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="bodyTable">
                         <?php foreach ($tarefas as $tarefa) : ?>
 
                             <tr>
@@ -65,7 +65,7 @@ require 'partials/header.php';
                                         <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever-id="<?= $tarefa->getIdTask(); ?>" data-bs-whatever-desc="<?= $tarefa->getDescTask(); ?>">Editar</a>
 
 
-                                        <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
+                                        <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
                                     </div>
                                 </td>
                             </tr>
@@ -90,13 +90,13 @@ require 'partials/header.php';
                             <label for="recipient-name" class="col-form-label">Editar Tarefa:</label>
 
                             <input type="text" class="form-control" id="recipient-name" name="desc_task">
-                            
+
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label"></label>
 
-                            <input type="hidden" class="form-control testeId" id="recipient-name" name="id_task">
-                            
+                            <input type="hidden" class="form-control hiddenId" id="recipient-name" name="id_task">
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

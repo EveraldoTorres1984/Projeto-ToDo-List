@@ -1,85 +1,80 @@
-@import 'defaults.css';
+html {
+    background-color: #6495ED;
+}
 
-* {
-    box-sizing: border-box;
+body {
     margin: 0;
     padding: 0;
-}
-body {
-    font-family: Helvetica;
-    font-size:13px;
-    background-color:#edeef0;
-    margin:0;
-    padding-bottom:50px;
-}
-.container {
-    max-width:1040px;
-    margin:auto;
-}
-header {
-    background-color:#4a76a8;
-    height:45px;
-    box-shadow: 0px 0px 4px #333;
-    position:relative;
-    z-index:99;
-}
-header .container {
-    display:flex;
-    height:inherit;
-    justify-content: center;
-    align-items: center;
-}
-header img {
-    height:20px;
-}
-header a {
-    display: flex;
+    font-family: sans-serif;
 }
 
-form {
-    max-width:400px;
-    margin: auto;
-    background-color: #FFF;
-    border:1px solid #c9cacc;
-    border-radius:5px;
-    padding:20px;
-    margin-top:50px;
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background-color: #000;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
-form label {
-    display: block;
+
+.box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
 }
-form input {
-    display: block;
+
+.box .inputBox {
+    position: relative;
 }
-form .input {
-    font-size:15px;
-    height:40px;
+
+.box .inputBox input {
     width: 100%;
-    outline: 0;
-    border:0;
-    background-color:#EEE;
-    border-radius:10px;
-    padding:15px;
-    margin-bottom:10px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    outline: none;
+    background-color: transparent;
 }
-form .input:focus {
-    background-color:#DDD;
+
+.box .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #ffffff;
+    pointer-events: none;
+    transition: .5s;
 }
-form .button {
-    border:0;
-    padding:10px 20px;
-    background-color:#4a76a8;
-    border-radius:10px;
-    color:#FFF;
-    font-size:15px;
-    margin-bottom:10px;
-    cursor:pointer;
-    box-shadow:0px 0px 3px #999;
+
+.box .inputBox input:focus~label,
+.box .inputBox input:valid~label {
+    top: -18px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 12px;
 }
-form .button:hover {
-    background-color:#477dbb;
+
+.box input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
-form a {
-    text-decoration:none;
-    color:#4a76a8;
+
+.errorInput {
+    border: 1px solid red !important;
 }

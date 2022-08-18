@@ -55,14 +55,9 @@ header .head-side {
 
 .head-side .head-side-right {
     display: flex;
-    align-items: center;
-    color: #ffff;
+    align-items: center;    
 }
 
-.texto-logout a {
-    text-decoration: none;
-    color: #ffff;
-}
 
 .search-area input {
     background-color: #ffff;
@@ -104,6 +99,8 @@ header .head-side {
 .user-logout {
     display: block;
     margin-left: 5px;
+    color: #ffff;
+    text-decoration: none;    
 }
 
 .user-logout img {
