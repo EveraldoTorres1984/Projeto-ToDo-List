@@ -2,8 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background-color: #87CEEB;
+    font-family: sans-serif;  
+    background-color: #E0FFFF;
 }
 
 .box {
@@ -28,14 +28,11 @@ body {
 
 .box .inputBox {
     position: relative;
+
 }
 
-#btn-link #buttonLogin {
-    margin: 20px 0 20px 0;
-}
-
-#btn-link .link {
-    text-decoration: none;    
+.box .inputBox .link {
+    text-decoration: none;
 }
 
 .box .inputBox input {
@@ -44,7 +41,7 @@ body {
     font-size: 16px;
     color: #ffffff;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #ffffff;
     outline: none;
@@ -85,12 +82,6 @@ body {
     border-radius: 5px;
 }
 
-.error {
-    font-size: 14px;
-    background-color: #ff0000;
-    color: #ffff;
-    padding: 4px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-align: center;
+.errorInput {
+    border: 1px solid red !important;
 }

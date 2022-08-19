@@ -17,30 +17,29 @@ require 'config.php';
 </head>
 
 <body>
-    <div class="box">
-        <h2>Login</h2>
-        <form method="POST" action="<?= $base ?>/login_action.php">
 
-            <?php if (!empty($_SESSION['flash'])) : ?>
-                <?= $_SESSION['flash']; ?>
-                <?= $_SESSION['flash'] = ''; ?>
-            <?php endif; ?>
+    <div class="container">
 
-            <div class="inputBox">
-                <input class="inputEmail" type="email" name="email" autocomplete="off" autofocus="" required />
-                <label for="">Email</label>
-            </div>
-            <div class="inputBox">
-                <input class="inputSenha" type="password" name="senha" required />
-                <label for="">Senha</label>
-            </div>
+        <div class="box">
+            <h2>Login</h2>
+            <form method="POST" action="<?= $base ?>/login_action.php" class="validator">
 
-            <button id="buttonLogin" type="submit" class="btn btn-primary">Entrar</button><br>
+                <div class="inputBox">
+                    <input class="inputEmail" type="email" name="email" data-rules="required" autocomplete="off" />
+                    <label for="">Email</label>
+                </div>
+                <div class="inputBox">
+                    <input class="inputSenha" type="password" name="senha" data-rules="required" />
+                    <label for="">Senha</label>
+                </div>
+                <div id="btn-link">
+                    <button id="buttonLogin" type="submit" class="btn btn-primary">Entrar</button><br>
 
-            <a href="<?= $base; ?>/signup.php">Ainda não tem conta? Cadastre-se</a>
-        </form>
+                    <a class="link" href="<?= $base; ?>/signup.php">Ainda não tem conta? Cadastre-se</a>
+                </div>
+            </form>
+        </div>
     </div>
-
 
     <script src="assets/js/validacao.js"></script>
     <script src="assets/js/jquery.js"></script>

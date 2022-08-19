@@ -7,7 +7,7 @@ require 'dao/TableDaoSQL.php';
 $auth = new Auth($conn, $base);
 $userInfo = $auth->checkToken();
 
-$tarefa =  trim(filter_input(INPUT_POST, 'tarefa', FILTER_SANITIZE_SPECIAL_CHARS));
+$tarefa =  trim(ucfirst(filter_input(INPUT_POST, 'tarefa', FILTER_SANITIZE_SPECIAL_CHARS)));
 
 if ($tarefa) {
     $tarefaDao = new TableDaoSQL($conn);
