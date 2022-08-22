@@ -1,21 +1,21 @@
 
 .container input:focus::placeholder {
-    color: transparent;
+    color: transparent;    
 }
-#center-thead{
+
+#center-thead {
     width: 100%;
-    text-align: center;    
+    text-align: center;
 }
 
-tr,th,td{
-    text-align: center; 
-    vertical-align: middle;        
-    
-}
-#btn-acao{
-    display: flex;
-    justify-content: center;     
-    
+tr,
+th,
+td {
+    text-align: center;
+    vertical-align: middle;
 }
 
-
+.btn-acao td,
+a {
+    margin-right: 10px;
+}

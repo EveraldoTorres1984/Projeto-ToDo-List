@@ -45,7 +45,7 @@ require 'partials/header.php';
                 <table class="table table-striped mt-5">
                     <thead id="center-thead"">
                         <tr>
-                        <th scope=" col" class="table-primary fs-4">ID</th>
+                        <!-- <th scope=" col" class="table-primary fs-4">ID</th> -->
                         <th scope="col" class="table-primary fs-4">Tarefa</th>
                         <th scope="col" class="table-primary fs-4">Criada em</th>
                         <th scope="col" class="table-primary fs-4">Ações</th>
@@ -56,14 +56,13 @@ require 'partials/header.php';
                         <?php foreach ($tarefas as $tarefa) : ?>
 
                             <tr>
-                                <td><?= $tarefa->getIdTask(); ?></td>
+                                <!-- <td><?= $tarefa->getIdTask(); ?></td> -->
                                 <td><?= $tarefa->getDescTask(); ?></td>
                                 <td><?= $tarefa->getDateTask(); ?></td>
-                                <td class="col-md-4">
-                                    <div id="btn-acao">
+                                <td class="col-md-4 btn-acao">
+                                    <div>
 
                                         <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever-id="<?= $tarefa->getIdTask(); ?>" data-bs-whatever-desc="<?= $tarefa->getDescTask(); ?>">Editar</a>
-
 
                                         <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
                                     </div>

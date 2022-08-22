@@ -15,6 +15,6 @@ if ($email && $senha) {
     }
 }
 
-$_SESSION['flash'] = 'E-mail e/ou senha inválidos';
+$_SESSION['flash'] = '<div class="alert alert-danger div-alert text-center" role="alert"> Email e/ou Senha não cadastrado(s). </div>';
 header("location: " . $base . "/login.php");
 exit;

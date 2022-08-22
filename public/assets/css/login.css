@@ -3,7 +3,24 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #87CEEB;
+    background: linear-gradient(-45deg, #000080, #3CB371, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .box {
@@ -30,12 +47,12 @@ body {
     position: relative;
 }
 
-#btn-link #buttonLogin {
+#btn-link .buttonLogin {
     margin: 20px 0 20px 0;
 }
 
 #btn-link .link {
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .box .inputBox input {
@@ -44,7 +61,7 @@ body {
     font-size: 16px;
     color: #ffffff;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     border: none;
     border-bottom: 1px solid #ffffff;
     outline: none;
@@ -52,37 +69,11 @@ body {
 }
 
 .box .inputBox label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #ffffff;
-    pointer-events: none;
-    transition: .5s;
+    color: #87CEEB;
 }
 
 .box .inputBox button {
     margin-bottom: 20px;
-}
-
-.box .inputBox input:focus~label,
-.box .inputBox input:valid~label {
-    top: -18px;
-    left: 0;
-    color: #03a9f4;
-    font-size: 12px;
-}
-
-.box input[type="submit"] {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    background-color: #03a9f4;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
 }
 
 .error {

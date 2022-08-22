@@ -24,7 +24,7 @@ $firstName = current(explode(' ', $userInfo->nome));
                 </div>
             </div>
             <div class="head-center">
-                <h2>Seja bem-vindo, <?= $firstName; ?></h2>
+                <h2>Seja bem-vindo(a), <?= $firstName; ?></h2>
             </div>
             <div class="head-side-right">                
                 <a href="<?= $base; ?>/logout.php" class="user-logout">Sair
