@@ -17,7 +17,6 @@ require 'partials/header.php';
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <title></title>
@@ -25,7 +24,6 @@ require 'partials/header.php';
     <link rel="stylesheet" href="assets/css/body.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
-
 <body class="bg-light">
     <div class="container">
         <form class="novaTarefa" action="<?= $base; ?>/table_action.php" method="POST">
@@ -44,24 +42,19 @@ require 'partials/header.php';
             <div class="col-md-12">
                 <table class="table table-striped mt-5">
                     <thead id="center-thead"">
-                        <tr>
-                        <!-- <th scope=" col" class="table-primary fs-4">ID</th> -->
+                        <tr>                       
                         <th scope="col" class="table-primary fs-4">Tarefa</th>
                         <th scope="col" class="table-primary fs-4">Criada em</th>
                         <th scope="col" class="table-primary fs-4">Ações</th>
                         </tr>
                     </thead>
-
                     <tbody id="bodyTable">
                         <?php foreach ($tarefas as $tarefa) : ?>
-
                             <tr>
-                                <!-- <td><?= $tarefa->getIdTask(); ?></td> -->
                                 <td><?= $tarefa->getDescTask(); ?></td>
                                 <td><?= $tarefa->getDateTask(); ?></td>
                                 <td class="col-md-4 btn-acao">
                                     <div>
-
                                         <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever-id="<?= $tarefa->getIdTask(); ?>" data-bs-whatever-desc="<?= $tarefa->getDescTask(); ?>">Editar</a>
 
                                         <a href="delete.php?id_task=<?= $tarefa->getIdTask() . '&id_user=' . $tarefa->getIdUser(); ?>" class=" btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar esta tarefa?')">Apagar</a>
@@ -74,8 +67,6 @@ require 'partials/header.php';
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -87,15 +78,11 @@ require 'partials/header.php';
                     <form method="POST" action="<?= $base; ?>/editTask_action.php">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Editar Tarefa:</label>
-
                             <input type="text" class="form-control" id="recipient-name" name="desc_task">
-
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label"></label>
-
                             <input type="hidden" class="form-control hiddenId" id="recipient-name" name="id_task">
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -106,7 +93,6 @@ require 'partials/header.php';
             </div>
         </div>
     </div>
-
 
     <?php
     require 'partials/footer.php'
