@@ -32,7 +32,7 @@ require 'partials/header.php';
             <div class="container">
                 <div class="row justify-content-center m-auto shadow bg-transparent mt-3 py-3 col-md-6 mt-5">
                     <div class="col-8">
-                        <input type="text" name="tarefa" class="form-control" id="inserirTarefa" placeholder="Insira suas tarefas aqui, <?= $firstName ?>">
+                        <input type="text" name="tarefa" class="form-control" id="inserirTarefa" maxlength="50" placeholder="Insira suas tarefas aqui, <?= ucfirst($firstName) ?>">
                     </div>
                     <div class="col-2">
                         <button class="btn btn-primary" type="submit">Adicionar</button>
