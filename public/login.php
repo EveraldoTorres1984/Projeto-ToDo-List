@@ -9,6 +9,7 @@ require 'config.php';
 
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../assets/images/task-br.ico" type="image/x-icon">
     <title>Login</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <link rel="stylesheet" href="<?= $base; ?>/assets/css/login.css" />

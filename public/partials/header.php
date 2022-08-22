@@ -7,6 +7,7 @@ $firstName = current(explode(' ', $userInfo->nome));
 
 <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../assets/images/task-br.ico" type="image/x-icon">
     <title>Lista de Tarefas</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     <link rel="stylesheet" href="<?= $base; ?>/assets/css/style.css" />
@@ -19,14 +20,14 @@ $firstName = current(explode(' ', $userInfo->nome));
             <div class="head-side-left">
                 <div class="search-area">
                     <form method="GET">
-                        <input type="text" id="filtro" placeholder="Buscar na tabela"/>
+                        <input type="text" id="filtro" placeholder="Buscar na tabela" />
                     </form>
                 </div>
             </div>
             <div class="head-center">
                 <h2>Seja bem-vindo(a), <?= ucfirst($firstName); ?></h2>
             </div>
-            <div class="head-side-right">                
+            <div class="head-side-right">
                 <a href="<?= $base; ?>/logout.php" class="user-logout">Sair
                     <img src="<?= $base; ?>/assets/images/power_off.png" />
                 </a>
